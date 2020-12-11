@@ -39,7 +39,7 @@ CREATE PROC [sp_generate_merge]
  @include_use_db bit = 1, -- When 1, includes a USE [DatabaseName] statement at the beginning of the generated batch
  @results_to_text bit = 0, -- When 1, outputs results to grid/messages window. When 0, outputs MERGE statement in an XML fragment. When NULL, only the @output OUTPUT parameter is returned.
  @include_rowsaffected bit = 1, -- When 1, a section is added to the end of the batch which outputs rows affected by the MERGE
- @nologo bit = 0, -- When 1, the "About" comment is suppressed from output
+ @nologo bit = 1, -- When 1, the "About" comment is suppressed from output
  @batch_separator nvarchar(50) = 'GO', -- Batch separator to use. Specify NULL to output all statements within a single batch
  @output nvarchar(max) = null output -- Use this output parameter to return the generated T-SQL batches to the caller (Hint: specify @batch_separator=NULL to output all statements within a single batch)
 )
